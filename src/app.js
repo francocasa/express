@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const salesRoutes = require("./routes/salesRoutes");
+const moviesRoutes = require("./routes/moviesRoutes");
 const cors = require("cors"); // Si usas CORS
 const connectDB = require("./config/db"); // Importar la función de conexión
 
@@ -14,7 +14,7 @@ app.use(cors());
 connectDB();
 
 // Rutas
-app.use("/api", salesRoutes);
+app.use("/api", moviesRoutes);
 
 // Iniciar el servidor
 const port = process.env.PORT || 3000;

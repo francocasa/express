@@ -4,13 +4,10 @@ const mongoose = require("mongoose");
 // Esta es la función que se encarga de conectar a la base de datos
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      process.env.DB_URL || "mongodb://localhost:27017/supermarketSales",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    await mongoose.connect(process.env.DB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("Conectado a MongoDB");
   } catch (err) {
     console.error("Error de conexión a MongoDB:", err);
